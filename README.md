@@ -3,7 +3,7 @@
 Ever find a highly valuable Instagram Reel or a Youtube short but lose it in your Saved reels? *The Social Bookmarker* solves this by allowing you to forward any Instagram link or a youtube short link to a WhatsApp bot. The system automatically extracts the caption, uses AI to tag, categorize, and summarize the content, and saves it to a web dashboard for your personal knowledge base.
 
 ## Demo Video
-[![The Social Saver Demo](<img width="1885" height="973" alt="Screenshot 2026-02-22 224200" src="https://github.com/user-attachments/assets/bf80aa09-778a-43fb-9031-b81a9f52801b" />)]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/soBSuekveWg))
+[![The Social Saver Demo]((https://youtu.be/soBSuekveWg))
 
 
 ## Architecture Diagram

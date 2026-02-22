@@ -1,5 +1,5 @@
 ## The Social Bookmarker
-**Your AI-Powered Content Curation Assistant via WhatsApp**
+**The AI-Powered Content Bokmarker Website via a Whatsapp chatbot**
 Ever find a highly valuable Instagram Reel or a Youtube short but lose it in your Saved reels? *The Social Bookmarker* solves this by allowing you to forward any Instagram link or a youtube short link to a WhatsApp bot. The system automatically extracts the caption, uses AI to tag, categorize, and summarize the content, and saves it to a web dashboard for your personal knowledge base.
 
 ## Demo Video

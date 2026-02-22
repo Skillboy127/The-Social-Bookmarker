@@ -10,37 +10,24 @@ Ever find a highly valuable Instagram Reel or Post but lose it in your Saved fol
 Here is the high-level flow of how *The Social Saver* processes your messages:
 ```mermaid
 flowchart TD
-    %% Define Nodes
-    User(["User (WhatsApp)"])
-    WA_Bot["WhatsApp Bot Setup"]
-    FlaskServer["Python Webhook Backend"]
-    Scraper["Metadata & Caption Extractor"]
-    AI_Module["AI Processing (Categorization & Summary)"]
-    DB[("Database")]
-    WebDash["Searchable Web Dashboard"]
-    %% Interactions
-    User -- "1. Sends IG Link" --> WA_Bot
-    WA_Bot -- "2. Triggers Webhook" --> FlaskServer
-    FlaskServer -- "3. Parses URL" --> Scraper
-    Scraper -- "4. Returns Caption" --> FlaskServer
-    FlaskServer -- "5. Analyzes Text" --> AI_Module
-    AI_Module -- "6. Returns Tags & Summary" --> FlaskServer
-    FlaskServer -- "7. Saves Curated Item" --> DB
-    FlaskServer -- "8. Sends Success Msg" --> WA_Bot
-    WA_Bot -- "9. Confirmation" --> User
+    User["User on WhatsApp"]
+    Twilio["Twilio Webhook"]
+    FlaskApp["Python Flask Backend"]
+    Scraper["Insta Scraper Script"]
+    ChatGPT["OpenAI API"]
+    DB["MongoDB Database"]
+    Frontend["React Dashboard"]
+    User -->|"Sends reel link"| Twilio
+    Twilio -->|"POST request"| FlaskApp
+    FlaskApp -->|"Gets video URL"| Scraper
+    Scraper -->|"Returns caption"| FlaskApp
+    FlaskApp -->|"Send text to summarize"| ChatGPT
+    ChatGPT -->|"Returns summary and tags"| FlaskApp
+    FlaskApp -->|"Save to DB"| DB
+    FlaskApp -->|"Send Success Msg"| Twilio
+    Twilio -->|"Done!"| User
     
-    %% Dashboard
-    DB -. "10. Queries Data" .-> WebDash
-    WebDash -. "Views saved content" .-> User
-    %% Styling
-    classDef primary fill:#25D366,stroke:#128C7E,stroke-width:2px,color:#fff;
-    classDef backend fill:#4B8BBE,stroke:#306998,stroke-width:2px,color:#fff;
-    classDef ai fill:#FF9900,stroke:#E67E22,stroke-width:2px,color:#fff;
-    classDef db fill:#F1C40F,stroke:#F39C12,stroke-width:2px,color:#333;
-    class User,WA_Bot primary;
-    class FlaskServer,WebDash,Scraper backend;
-    class AI_Module ai;
-    class DB db;
+    DB -.->|"Fetch saved posts"| Frontend
 ```
 ---
 ## ✨ Key Features

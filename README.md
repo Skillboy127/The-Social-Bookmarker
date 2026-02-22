@@ -10,24 +10,37 @@ Ever find a highly valuable Instagram Reel or Post but lose it in your Saved fol
 Here is the high-level flow of how *The Social Saver* processes your messages:
 ```mermaid
 flowchart TD
-    User["User on WhatsApp"]
-    Twilio["Twilio Webhook"]
+    %% Nodes with unique shapes
+    User(["User on WhatsApp"])
+    Twilio[/"Twilio Webhook"/]
     FlaskApp["Python Flask Backend"]
-    Scraper["Insta Scraper Script"]
-    ChatGPT["OpenAI API"]
-    DB["MongoDB Database"]
-    Frontend["React Dashboard"]
+    Scraper[["Insta Scraper Script"]]
+    Gemini{{"Gemini API"}}
+    DB[("MongoDB Database")]
+    Frontend(["React Dashboard"])
+    %% Flow connections
     User -->|"Sends reel link"| Twilio
     Twilio -->|"POST request"| FlaskApp
     FlaskApp -->|"Gets video URL"| Scraper
     Scraper -->|"Returns caption"| FlaskApp
-    FlaskApp -->|"Send text to summarize"| ChatGPT
-    ChatGPT -->|"Returns summary and tags"| FlaskApp
+    FlaskApp -->|"Send text to summarize"| Gemini
+    Gemini -->|"Returns summary and tags"| FlaskApp
     FlaskApp -->|"Save to DB"| DB
     FlaskApp -->|"Send Success Msg"| Twilio
     Twilio -->|"Done!"| User
     
     DB -.->|"Fetch saved posts"| Frontend
+    %% Styling and colors
+    classDef userNode fill:#25D366,stroke:#128C7E,stroke-width:2px,color:#fff;
+    classDef apiNode fill:#8E44AD,stroke:#5B2C6F,stroke-width:2px,color:#fff;
+    classDef backendNode fill:#2C3E50,stroke:#1A252F,stroke-width:2px,color:#fff;
+    classDef frontendNode fill:#3498DB,stroke:#2980B9,stroke-width:2px,color:#fff;
+    classDef dbNode fill:#F1C40F,stroke:#D4AC0D,stroke-width:2px,color:#333;
+    class User userNode;
+    class Twilio,Gemini,Scraper apiNode;
+    class FlaskApp backendNode;
+    class DB dbNode;
+    class Frontend frontendNode;
 ```
 ---
 ## ✨ Key Features
@@ -39,7 +52,7 @@ flowchart TD
 ## 💻 Tech Stack
 - **Backend API:** Python, Flask
 - **Messaging:** Twilio API for WhatsApp / Meta Cloud API
-- **AI capabilities:** OpenAI API (for summaries and classification)
+- **AI capabilities:** Gemini API (for summaries and classification)
 - **Database:** (Insert your DB here, e.g., PostgreSQL, MongoDB)
 - **Frontend Dashboard:** (Insert your frontend tech here, e.g., React, Next.js, HTML/CSS)
 ---

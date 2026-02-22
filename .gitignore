@@ -1,0 +1,12 @@
+# Ignore secret API keys
+.env
+
+# Ignore the virtual environment (just to be extra safe)
+.venv/
+
+# Ignore local databases
+*.db
+*.sqlite3
+
+# Ignore Python cache files
+__pycache__/

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Social Bookmarker | Your AI Bookmark Dashboard</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="landingOverlay" class="landing-overlay">
+        <h1 id="landingWelcome" class="landing-text hidden-text">Welcome to your bookmarks</h1>
+        <h2 id="landingPrompt" class="landing-text hidden-text">What lost gems are you looking for ?</h2>
+    </div>
+
+    <div class="background-blobs">
+        <div class="blob shape-1"></div>
+        <div class="blob shape-2"></div>
+        <div class="blob shape-3"></div>
+    </div>
+
+    <div class="wrapper">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fa-solid fa-bookmark"></i>
+                <h1>The Social Bookmarker</h1>
+            </div>
+        </div>
+
+        <header class="search-header">
+            <div class="controls">
+                <div class="search-container">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search keywords or tags...">
+                </div>
+            </div>
+        </header>
+
+        <nav class="category-bar" id="categoryBar">
+            <!-- Filter buttons injected here via JS -->
+        </nav>
+
+        <main>
+            <div id="loadingIndicator" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Loading your saved content...</p>
+            </div>
+
+            <section class="card-grid" id="bookmarksContainer">
+                <!-- Bookmarks injected here via JS -->
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

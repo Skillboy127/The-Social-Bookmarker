@@ -4,6 +4,7 @@ Ever find a highly valuable Instagram Reel or a Youtube short but lose it in you
 
 ## Demo Video
 [![The Social Saver Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/soBSuekveWg))
+<img width="1885" height="973" alt="Screenshot 2026-02-22 224200" src="https://github.com/user-attachments/assets/bf80aa09-778a-43fb-9031-b81a9f52801b" />
 
 ## Architecture Diagram
 

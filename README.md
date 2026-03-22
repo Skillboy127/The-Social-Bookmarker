@@ -49,6 +49,8 @@ flowchart TD
 - **Automated Extraction:** Pulls context and captions directly from the URL.
 - **AI-Powered Organization:** Automatically categorizes content, extracts keywords, and generates summaries.
 - **Searchable Dashboard:** Filter, search, and review all your saved knowledge in a clean UI.
+- **Database:**  MongoDB
+- **Frontend Dashboard:** React, Next.js, HTML/CSS)
 
 ## Tech Stack
 - **Backend API:** Python, Flask

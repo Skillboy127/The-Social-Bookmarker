@@ -54,6 +54,4 @@ flowchart TD
 - **Backend API:** Python, Flask
 - **Messaging:** Twilio API for WhatsApp / Meta Cloud API
 - **AI capabilities:** Gemini API (for summaries and classification)
-- **Database:** (Insert your DB here, e.g., PostgreSQL, MongoDB)
-- **Frontend Dashboard:** (Insert your frontend tech here, e.g., React, Next.js, HTML/CSS)
 
